@@ -1,0 +1,43 @@
+@startuml Reto04
+
+
+class Persona {
+    String nombre
+    String direccion
+    Int telefono
+}
+
+
+class Entrenador {
+ String nivel_acreditacion
+ Int experiencia
+}
+
+class Jugador {
+ Int number
+ String posicion
+
+}
+
+class Juego {
+ String localidad
+ Int puntuacion
+}
+
+class Equipo {
+ String nombre
+ String registro
+ Jugador jugadores
+}
+
+Persona <|-- Jugador
+Persona <|-- Entrenador
+
+Equipo "1" *--"6 a 20" Jugador : tiene
+Equipo "muchos" -- "muchos" Juego: compiten 
+
+Entrenador "1" --o "muchos" Equipo : "es parte"
+Equipo "1" --o "1" Entrenador : tiene
+
+
+@endum

@@ -1,0 +1,69 @@
+@startuml Reto04_Objetos
+
+' Definición de objetos
+
+
+object entrenador1 {
+  nivel_acreditacion = "Nivel 1"
+  experiencia = 5
+}
+
+object jugador1 {
+ nombre = "Carlos López"
+ direccion = "Calle 1"
+ telefono = 123456789  
+  number = 10
+  posicion = "Delantero"
+}
+
+object jugador2 {
+nombre = "María García"
+direccion = "Calle 2"
+telefono = 987654321
+  number = 7
+  posicion = "Defensa"
+}
+
+object jugador3 {
+    nombre = "Marcos Diaz"
+    direccion = "Calle 3"
+    telefono = 1212121212
+      number = 19
+      posicion = "Defensa"
+    }
+
+ object jugador4 {
+    nombre = "Génesis Montilla"
+    direccion = "Calle 4"
+    telefono = 131313131313
+    number = 8
+    posicion = "Defensa"
+    }
+
+
+
+object juego1 {
+localidad = "Estadio Central"
+puntuacion = 3
+}
+
+object equipo1 {
+  nombre = "Los Campeones"
+  registro = "E001"
+  capitan = "Carlos López"
+}
+
+' Relaciones entre objetos
+
+equipo1 -- jugador1 : tiene >
+equipo1 -- jugador2 : tiene >
+equipo1 -- jugador3 : tiene >
+equipo1 -- jugador4 : tiene >
+
+equipo1 -- juego1 : compiten >
+
+
+equipo1 -- entrenador1 : tiene >
+entrenador1 -- equipo1 : es parte >
+
+@enduml
